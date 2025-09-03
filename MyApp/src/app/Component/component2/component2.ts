@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './component2.css'
 })
 export class Component2 {
-
+String:"asd";
 }
