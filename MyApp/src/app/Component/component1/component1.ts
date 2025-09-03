@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class Component1 {
   String s = "dfgbfgdb";
+  jdbvkjfdsbk
 }
