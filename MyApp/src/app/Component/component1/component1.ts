@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './component1.css'
 })
 export class Component1 {
-  String s = "dfgbfgdb";
-  jdbvkjfdsbk
+  String : any = "dfgbfgdb";
 }

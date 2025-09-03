@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<mat-toolbar>
+  <span style="color:#b82228">AASLIN</span>
+  <div class="property1">
+    <a mat-button href="#card" target="text-decoration:none">Home</a>
+    <a mat-button href="#aboutus" target="text-decoration:none">About Us</a>
+    <a mat-button routerLink="/Services" routerLinkActive="active-link">Services</a>
+    <a mat-button routerLink="/Team" routerLinkActive="active-link">Team</a>
+    <a mat-button routerLink="/Careers" routerLinkActive="active-link">Careers</a>
+    <a mat-button routerLink="/WhyUs" routerLinkActive="active-link">Why Us</a>
+    <a mat-button routerLink="/Contacts" routerLinkActive="active-link">Contacts</a>
+    <a mat-raised-button routerLink="/Register" routerLinkActive="active-link">Register</a>
+  </div>
+</mat-toolbar>
+
+<div id="aboutus" class="property2">
+    <h1 style="color:#b82228">About Us</h1>
+    <p>In a world marked by rapid technological advancements, dynamic economic shifts, and a
+				constantly changing global landscape, navigating these transformations poses a considerable
+				challenge for our people, clients, partners, and communities. At AASLIN Technologies, we are
+				dedicated to pushing the limits of what is achievable. Drawing on our expertise, experience,
+				and innovative ecosystem, we empower enterprises, individuals, and communities to forge a
+				better future at an accelerated pace. Together, we strive to overcome obstacles by driving
+				business transformation through our strengths—technology, talent, and a robust network of
+				partners. Our unwavering commitment is directed towards a singular objective: ensuring that
+				our clients achieve their future sustainable selves well ahead of schedule.</p>
+</div>
+
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list>
+<!-- 
+<mat-card  class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Medium</mat-card-subtitle>
+      <img mat-card-md-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{longText}}
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Large</mat-card-subtitle>
+      <img mat-card-lg-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{longText}}
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Extra large</mat-card-subtitle>
+      <img mat-card-xl-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{longText}}
+  </mat-card-content>
+</mat-card>
+
+<p><a href="#C4">Jump to Chapter 4</a></p>
+<p><a href="#C10">Jump to Chapter 10</a></p>
+
+<h2>Chapter 1</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 2</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 3</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C4">Chapter 4</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 5</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 6</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 >Chapter 7</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 8</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 9</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C10">Chapter 10</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 >Chapter 11</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 12</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 13</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 14</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 15</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 16</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 17</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 18</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 19</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 20</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 21</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 22</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 23</h2>
+<p>This chapter explains ba bla bla</p>
+
+<mat-card id="card" class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Small</mat-card-subtitle>
+      <img mat-card-sm-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{longText}}
+  </mat-card-content>
+</mat-card> -->
+</html>
