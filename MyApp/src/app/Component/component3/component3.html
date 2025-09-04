@@ -1,1 +1,27 @@
-<p>component3 works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <!-- Side Navigation Drawer for Mobile -->
+  <mat-sidenav #drawer mode="over" class="sidenav" [opened]="false">
+    <mat-nav-list>
+      <a mat-list-item href="#home" (click)="setActive('home'); drawer.close()">Home</a>
+      <a mat-list-item href="#about" (click)="setActive('about'); drawer.close()">About</a>
+      <a mat-list-item href="#cards" (click)="setActive('cards'); drawer.close()">Cards</a>
+      <a mat-list-item href="#contact" (click)="setActive('contact'); drawer.close()">Contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Top Toolbar -->
+    <mat-toolbar color="primary" class="nav-bar">
+      <button *ngIf="isMobile" mat-icon-button (click)="drawer.toggle()" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="nav-title">My Website</span>
+      <span class="spacer"></span>
+
+      <nav *ngIf="!isMobile" class="nav-links">
+        <a mat-button href="#home" [class.active]="activeSection === 'home'" (click)="setActive('home')">Home</a>
+        <a mat-button href="#about" [class.active]="activeSection === 'about'" (click)="setActive('about')">About</a>
+        <a mat-button href="#cards" [class.active]="activeSection === 'cards'" (click)="setActive('cards')">Cards</a>
+        <a mat-button href="#contact" [class.active]="activeSection === 'contact'" (click)="setActive('contact')">Contact</a>
+      </nav>
+    </mat-toolbar>

@@ -1,161 +1,168 @@
-<!DOCTYPE html>
-<html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <mat-toolbar>
   <span style="color:#b82228">AASLIN</span>
   <div class="property1">
     <a mat-button href="#card" target="text-decoration:none">Home</a>
     <a mat-button href="#aboutus" target="text-decoration:none">About Us</a>
-    <a mat-button routerLink="/Services" routerLinkActive="active-link">Services</a>
-    <a mat-button routerLink="/Team" routerLinkActive="active-link">Team</a>
-    <a mat-button routerLink="/Careers" routerLinkActive="active-link">Careers</a>
-    <a mat-button routerLink="/WhyUs" routerLinkActive="active-link">Why Us</a>
-    <a mat-button routerLink="/Contacts" routerLinkActive="active-link">Contacts</a>
+    <a mat-button href="#service" target="text-decoration:none">Services</a>
+    <a mat-button href="#team" target="text-decoration:none">Team</a>
+    <a mat-button href="#careers" target="text-decoration:none">Careers</a>
+    <a mat-button href="#WhyUs" target="text-decoration:none">Why Us</a>
+    <a mat-button href="#contacts" target="text-decoration:none">Contacts</a>
     <a mat-raised-button routerLink="/Register" routerLinkActive="active-link">Register</a>
   </div>
 </mat-toolbar>
 
 <div id="aboutus" class="property2">
-    <h1 style="color:#b82228">About Us</h1>
-    <p>In a world marked by rapid technological advancements, dynamic economic shifts, and a
-				constantly changing global landscape, navigating these transformations poses a considerable
-				challenge for our people, clients, partners, and communities. At AASLIN Technologies, we are
-				dedicated to pushing the limits of what is achievable. Drawing on our expertise, experience,
-				and innovative ecosystem, we empower enterprises, individuals, and communities to forge a
-				better future at an accelerated pace. Together, we strive to overcome obstacles by driving
-				business transformation through our strengths—technology, talent, and a robust network of
-				partners. Our unwavering commitment is directed towards a singular objective: ensuring that
-				our clients achieve their future sustainable selves well ahead of schedule.</p>
+    <h1 style="color:#b82228">About Us</h1><br>
+    <p>{{AboutUs}}</p>
 </div>
 
-<mat-grid-list cols="2" rowHeight="1:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list>
-<!-- 
-<mat-card  class="example-card" appearance="outlined">
+<div id="service" class="property2">
+  <h1 style="color:#b82228">Services we provide</h1><br>
+<div class="carousel-container">
+  <button mat-icon-button (click)="prevSlide()" class="nav-button">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <div class="cards-wrapper">
+    <div class="cards" [style.transform]="'translateX(' + currentPosition + 'px)'">
+    <mat-card class="card" appearance="outlined">
+    <img class="ig"  mat-card-md-image src="https://media.geeksforgeeks.org/img-practice/prod/courses/227/Web/Other/Course_Backend_png_1720846964.png"  alt="Backend development">
+    <mat-card-header>
+      <mat-card-title>Backend Development</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{backend}}
+    </mat-card-content>
+    </mat-card>
+
+  <mat-card class="card" appearance="outlined">
+    <img class="ig"  mat-card-md-image src="https://media.geeksforgeeks.org/img-practice/prod/courses/227/Web/Other/Course_Backend_png_1720846964.png"  alt="Backend development">
+    <mat-card-header>
+      <mat-card-title>Frontend Development</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{frontend}}
+    </mat-card-content>
+  </mat-card>
+
+<mat-card class="card" appearance="outlined">
+  <img class="ig"  mat-card-md-image src="https://media.geeksforgeeks.org/img-practice/prod/courses/227/Web/Other/Course_Backend_png_1720846964.png"  alt="Backend development">
   <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Medium</mat-card-subtitle>
-      <img mat-card-md-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-    </mat-card-title-group>
+    <mat-card-title>FullStack Development</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    {{longText}}
+    {{backend}}
   </mat-card-content>
 </mat-card>
+</div>
+</div>
+  <button mat-icon-button (click)="nextSlide()" class="nav-button">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>
+</div>
 
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Large</mat-card-subtitle>
-      <img mat-card-lg-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    {{longText}}
-  </mat-card-content>
-</mat-card>
+<div id="team" class="property2">
+  <h1 style="color:#b82228">Meet Our Team</h1><br>
+  <p>{{AboutUs}}</p>
+  <h2 style="color:#b82228">People we work with</h2>
+  <img src="/PanUnited.png">
+</div>
 
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Extra large</mat-card-subtitle>
-      <img mat-card-xl-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    {{longText}}
-  </mat-card-content>
-</mat-card>
+<div id="careers" class="property2">
+  <h1 style="color:#b82228">Careers</h1><br>
+  <p>{{AboutUs}}{{AboutUs}}{{AboutUs}}{{AboutUs}}</p>
+  <pre></pre>
+    <button mat-raised-button>
+      Explore Now <mat-icon>arrow_forward</mat-icon>
+    </button>
+</div>
 
-<p><a href="#C4">Jump to Chapter 4</a></p>
-<p><a href="#C10">Jump to Chapter 10</a></p>
+<div id="WhyUs" class="property2">
+  <h1 style="color:#b82228">WhyUs</h1><br>
+  <p>{{AboutUs}}</p>
+</div>
 
-<h2>Chapter 1</h2>
-<p>This chapter explains ba bla bla</p>
+<div id="contacts" class="property3">
+  <h1 style="color:#b82228">Get in Touch</h1><br>
+  <div class="get-contact">
+  <form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
+    <h2 style="color:#b82228">Contact Form</h2>
+    <div id="contacts" class="left">
+    <label style="text-align:left" for="firstName">Name</label><br>
+    <input id="firstName" type="text" formControlName="firstName">
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('firstName')?.touched" class="error">
+      Name is required.
+    </div><br>
 
-<h2>Chapter 2</h2>
-<p>This chapter explains ba bla bla</p>
+    <label style="text-align:left" for="email">Email</label><br>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="nestedform.get('email')?.invalid && nestedform.get('email')?.touched" class="error">
+      <span *ngIf="nestedform.get('email')?.errors?.['required']">Email is required.</span>
+      <span *ngIf="nestedform.get('email')?.errors?.['email']">Invalid email format.</span>
+    </div><br>
 
-<h2>Chapter 3</h2>
-<p>This chapter explains ba bla bla</p>
+    <label style="text-align:left" for="subject">Subject</label><br>
+    <input id="subject" type="text" formControlName="subject"><br>
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('subject')?.touched" class="error">
+      Subject is required.
+    </div>
 
-<h2 id="C4">Chapter 4</h2>
-<p>This chapter explains ba bla bla</p>
+    <label style="text-align:left" for="message">Message</label><br>
+    <textarea id="message" formControlName="message" rows="4" cols="35"></textarea>
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('message')?.touched" class="error">
+      Message is required.
+    </div><br>
+  <button type="Submit">Send Message</button>
+  </div>
+</form>
+</div>
 
-<h2>Chapter 5</h2>
-<p>This chapter explains ba bla bla</p>
+<div class="get-company">
+  <h2 style="color:#b82228">Company</h2>
+  <ul>
+    <li><a href="#aboutus">About Us</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#team">Teams</a></li>
+    <li><a href="#careers">Careers</a></li>
+    <li><a href="#WhyUs">Why Us</a></li>
+  </ul>
+</div>
 
-<h2>Chapter 6</h2>
-<p>This chapter explains ba bla bla</p>
+<h2 style="color:#b82228">Address</h2>
+<div class="get-address">
+  <p>AASLIN Technologies Private Limited<br>
+Plot No. 4-51-7, 2nd & 3rd Floor,<br>
+Pavan Adithya, Post officeRd.,<br>
+Lawsons bay colony, Pedda Waltair,<br>
+Visakhapatnam - 530017</p>
+</div>
+</div>
 
-<h2 >Chapter 7</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 8</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 9</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2 id="C10">Chapter 10</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2 >Chapter 11</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 12</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 13</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 14</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 15</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 16</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 17</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 18</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 19</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 20</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 21</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 22</h2>
-<p>This chapter explains ba bla bla</p>
 
-<h2>Chapter 23</h2>
-<p>This chapter explains ba bla bla</p>
 
-<mat-card id="card" class="example-card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Small</mat-card-subtitle>
-      <img mat-card-sm-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    {{longText}}
-  </mat-card-content>
-</mat-card> -->
-</html>
+
+
+
+
+
+
+
+
