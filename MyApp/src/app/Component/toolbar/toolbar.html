@@ -1,6 +1,6 @@
 
-<mat-toolbar>
-  <span style="color:#b82228">AASLIN</span>
+<mat-toolbar style="background-color: aliceblue">
+  <span style="color:#b82228;font-family:regular;font-size:48px;">AASLIN</span>
   <div class="property1">
     <a mat-button href="#card" target="text-decoration:none">Home</a>
     <a mat-button href="#aboutus" target="text-decoration:none">About Us</a>
@@ -14,12 +14,22 @@
 </mat-toolbar>
 
 <div id="aboutus" class="property2">
-    <h1 style="color:#b82228">About Us</h1><br>
-    <p>{{AboutUs}}</p>
+    <h1>About Us</h1><br>
+    <div class="about">
+    <p>At AASLIN, we are a product-driven technology company passionate about building world-class solutions that redefine user experiences and business processes. Our products empower businesses and individuals to achieve more with innovation, simplicity, and performance.</p>
+
+<h2>What We Do</h2>
+<p>We specialize in end-to-end software product development—from stunning front-end interfaces to robust back-end architectures and scalable full-stack solutions. Our focus is on creating high-quality, secure, and future-ready products that solve real-world challenges and deliver measurable value.</p>
+
+<h2>Our Culture</h2>
+<p>We believe in innovation, collaboration, and continuous learning. At our company, you’ll work with cutting-edge technologies and a team of passionate engineers, designers, and visionaries who thrive on creativity and excellence.`;
+  backend=`A backend developer builds and maintains the server-side of websites and applications,
+   focusing on the parts users don't see.</p>
+   </div>
 </div>
 
-<div id="service" class="property2">
-  <h1 style="color:#b82228">Services we provide</h1><br>
+<div id="service" style="background-color: aliceblue" class="property2">
+  <h1>Services We Provide</h1><br>
 <div class="carousel-container">
   <button mat-icon-button (click)="prevSlide()" class="nav-button">
     <mat-icon>chevron_left</mat-icon>
@@ -28,7 +38,7 @@
   <div class="cards-wrapper">
     <div class="cards" [style.transform]="'translateX(' + currentPosition + 'px)'">
     <mat-card class="card" appearance="outlined">
-    <img class="ig"  mat-card-md-image src="https://media.geeksforgeeks.org/img-practice/prod/courses/227/Web/Other/Course_Backend_png_1720846964.png"  alt="Backend development">
+    <img class="ig"  mat-card-md-image src="/Backend.png"  alt="Backend development">
     <mat-card-header>
       <mat-card-title>Backend Development</mat-card-title>
     </mat-card-header>
@@ -38,7 +48,7 @@
     </mat-card>
 
   <mat-card class="card" appearance="outlined">
-    <img class="ig"  mat-card-md-image src="https://media.geeksforgeeks.org/img-practice/prod/courses/227/Web/Other/Course_Backend_png_1720846964.png"  alt="Backend development">
+    <img class="ig"  mat-card-md-image src="/frontend.jpeg"  alt="Frontend development">
     <mat-card-header>
       <mat-card-title>Frontend Development</mat-card-title>
     </mat-card-header>
@@ -48,7 +58,7 @@
   </mat-card>
 
 <mat-card class="card" appearance="outlined">
-  <img class="ig"  mat-card-md-image src="https://media.geeksforgeeks.org/img-practice/prod/courses/227/Web/Other/Course_Backend_png_1720846964.png"  alt="Backend development">
+  <img class="ig"  mat-card-md-image src="/Full stack.png"  alt="Full Stack development">
   <mat-card-header>
     <mat-card-title>FullStack Development</mat-card-title>
   </mat-card-header>
@@ -65,31 +75,57 @@
 </div>
 
 <div id="team" class="property2">
-  <h1 style="color:#b82228">Meet Our Team</h1><br>
-  <p>{{AboutUs}}</p>
-  <h2 style="color:#b82228">People we work with</h2>
-  <img src="/PanUnited.png">
+  <h1>Meet Our Team</h1><br>
+  <div class="team-section">
+  <div class="team-grid">
+    <mat-card class="team-card" *ngFor="let member of teamMembers">
+      <img mat-card-image [src]="member.image" alt="{{member.name}}" class="profile-img">
+      <mat-card-content style="text-align:center">
+        <h3>{{ member.name }}</h3>
+        <p class="role">{{ member.role }}</p>
+        <p class="bio">{{ member.bio }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a *ngIf="member.linkedin" [href]="member.linkedin" target="_blank">
+          <mat-icon>linkedin</mat-icon>
+        </a>
+        <a *ngIf="member.github" [href]="member.github" target="_blank">
+          <mat-icon>code</mat-icon>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+  <h2>People we work with</h2>
+  <img class="ig1" src="/PanUnited.png">
 </div>
 
-<div id="careers" class="property2">
-  <h1 style="color:#b82228">Careers</h1><br>
-  <p>{{AboutUs}}{{AboutUs}}{{AboutUs}}{{AboutUs}}</p>
+<div id="careers" style="background-color: aliceblue" class="property2">
+  <h1>Careers</h1><br>
+  <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">we don’t just build products—we build the future of technology.
+    <br> Our team consists of innovators, problem-solvers, and tech enthusiasts <br> who are passionate about creating solutions that make a difference.
+<br>Problem solvers who thrive in a collaborative environment
+<br>Creators who want to build scalable products that matter</p>
   <pre></pre>
     <button mat-raised-button>
       Explore Now <mat-icon>arrow_forward</mat-icon>
     </button>
 </div>
 
-<div id="WhyUs" class="property2">
-  <h1 style="color:#b82228">WhyUs</h1><br>
-  <p>{{AboutUs}}</p>
+<div id="Why Us" class="property2">
+  <h1>WhyUs</h1><br>
+  <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">✔ Work on Impactful Products - Your work will power real solutions used by thousands worldwide.<br>
+✔ Growth & Learning  -  We invest in your career with training, certifications, and mentorship.<br>
+✔ Collaborative Environment - Open culture, innovation-driven, and inclusive.<br>
+✔ Competitive Perks - Great benefits, flexible work, and performance rewards.<br></p>
 </div>
 
-<div id="contacts" class="property3">
-  <h1 style="color:#b82228">Get in Touch</h1><br>
-  <div class="get-contact">
-  <form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
+<div id="contacts" style="background-color: aliceblue" class="property2">
+  <h1>Get in Touch</h1><br>
+  <div style="background-color: aliceblue" class="property3">
+  <div  class="get-contact">
     <h2 style="color:#b82228">Contact Form</h2>
+  <form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
     <div id="contacts" class="left">
     <label style="text-align:left" for="firstName">Name</label><br>
     <input id="firstName" type="text" formControlName="firstName">
@@ -121,7 +157,7 @@
 </div>
 
 <div class="get-company">
-  <h2 style="color:#b82228">Company</h2>
+  <h2 style="color:#b82228">Company</h2><br>
   <ul>
     <li><a href="#aboutus">About Us</a></li>
     <li><a href="#service">Service</a></li>
@@ -131,17 +167,23 @@
   </ul>
 </div>
 
-<h2 style="color:#b82228">Address</h2>
 <div class="get-address">
-  <p>AASLIN Technologies Private Limited<br>
-Plot No. 4-51-7, 2nd & 3rd Floor,<br>
-Pavan Adithya, Post officeRd.,<br>
-Lawsons bay colony, Pedda Waltair,<br>
-Visakhapatnam - 530017</p>
+<h2 style="color:#b82228">Address</h2>
+<p>AASLIN Technologies Private Limited</p>
+<p>Plot No.4-51-7,2nd & 3rd Floor,</p>
+<p>Pavan Adithya,Post officeRoad,</p>
+<p>Lawsons Bay Colony,Pedda Waltair,</p>
+<p>Visakhapatnam-530017</p>
+<h2 style="color:#b82228">Timing</h2>
+<p>Monday-Friday</p>
+<p>8.00 Am-5.30 Pm</p>
+<button class="icon"><mat-icon>email</mat-icon></button>
 </div>
 </div>
-
-
+<footer class="footCopyRight">
+  © 2025 Copyright by AASLIN Developers. All rights reserved.
+</footer>
+</div>
 
 
 

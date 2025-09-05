@@ -16,19 +16,25 @@ import { FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/
   styleUrl: './toolbar.css'
 })
 export class Toolbar {
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  originally bred for hunting.`;
+  teamMembers = [
+    {
+      name: 'DVVS Raju',
+      role: 'Managing Director',
+      bio: 'Managing Director of AASLIN.',
+      image: 'employee1.png',
+      linkedin:'https://linked.com',
+      github: 'https://github.com',
+    },
+    {
+      name: 'Murali Krishna Paidi',
+      role: 'IT Manager',
+      bio: 'Leads developer, QA and support team.',
+      image: 'employee1.png',
+      linkedin: 'https://linked.com',
+      github: 'https://github.com',
+    },
+  ];
 
-  AboutUs =`In a world marked by rapid technological advancements, dynamic economic shifts, and a
-				constantly changing global landscape, navigating these transformations poses a considerable
-				challenge for our people, clients, partners, and communities. At AASLIN Technologies, we are
-				dedicated to pushing the limits of what is achievable. Drawing on our expertise, experience,
-				and innovative ecosystem, we empower enterprises, individuals, and communities to forge a
-				better future at an accelerated pace. Together, we strive to overcome obstacles by driving
-				business transformation through our strengths—technology, talent, and a robust network of
-				partners. Our unwavering commitment is directed towards a singular objective: ensuring that
-				our clients achieve their future sustainable selves well ahead of schedule.`;
   backend=`A backend developer builds and maintains the server-side of websites and applications,
    focusing on the parts users don't see.`;
 
@@ -49,6 +55,7 @@ export class Toolbar {
       this.currentPosition += this.cardWidth;
     }
 }
+
   nestedform:FormGroup;
   constructor(){
   this.nestedform = new FormGroup({
