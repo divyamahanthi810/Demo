@@ -9,9 +9,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/forms';
-@Component({
+import { RouterOutlet } from '@angular/router';
+import {MatSidenavModule} from '@angular/material/sidenav';@Component({
   selector: 'app-toolbar',
-  imports: [MatSnackBarModule,ReactiveFormsModule,CommonModule,MatIconModule,MatGridListModule,MatCardModule,MatToolbarModule,RouterLink,RouterLinkActive,MatButtonModule],
+  imports: [ RouterOutlet ,MatSidenavModule,MatSnackBarModule,ReactiveFormsModule,CommonModule,MatIconModule,MatGridListModule,MatCardModule,MatToolbarModule,RouterLink,RouterLinkActive,MatButtonModule],
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.css'
 })
