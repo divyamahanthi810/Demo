@@ -2,13 +2,14 @@
   <img height="60px" width="70px" src="aaslin_logo.png" alt="Logo">
   <span class="company-name">AASLIN Technologies <br>Private Limited</span>
   <div class="property1 desktop-nav">
-    <a mat-button href="#card">Home</a>
-    <a mat-button href="#aboutus">About Us</a>
-    <a mat-button href="#service">Services</a>
-    <a mat-button href="#team">Team</a>
-    <a mat-button href="#careers">Careers</a>
-    <a mat-button href="#WhyUs">Why Us</a>
-    <a mat-button href="#contacts">Contacts</a>
+    <a mat-button (click)="scrollTo('card')">Home</a>
+<a mat-button (click)="scrollTo('aboutus')">About Us</a>
+<a mat-button (click)="scrollTo('service')">Services</a>
+<a mat-button (click)="scrollTo('team')">Team</a>
+<a mat-button (click)="scrollTo('careers')">Careers</a>
+<a mat-button (click)="scrollTo('WhyUs')">Why Us</a>
+<a mat-button (click)="scrollTo('contacts')">Contacts</a>
+
   </div>
   <button mat-icon-button class="mobile-menu-btn" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
@@ -20,13 +21,13 @@
     <button mat-icon-button class="close-btn" (click)="sidenav.close()">
       <mat-icon>close</mat-icon>
     </button>
-    <a mat-button href="#card" (click)="sidenav.close()">Home</a>
-    <a mat-button href="#aboutus" (click)="sidenav.close()">About Us</a>
-    <a mat-button href="#service" (click)="sidenav.close()">Services</a>
-    <a mat-button href="#team" (click)="sidenav.close()">Team</a>
-    <a mat-button href="#careers" (click)="sidenav.close()">Careers</a>
-    <a mat-button href="#WhyUs" (click)="sidenav.close()">Why Us</a>
-    <a mat-button href="#contacts" (click)="sidenav.close()">Contacts</a>
+    <a mat-button (click)="scrollTo('card');sidenav.close()">Home</a>
+<a mat-button (click)="scrollTo('aboutus');sidenav.close()">About Us</a>
+<a mat-button (click)="scrollTo('service');sidenav.close()">Services</a>
+<a mat-button (click)="scrollTo('team');sidenav.close()">Team</a>
+<a mat-button (click)="scrollTo('careers');sidenav.close()">Careers</a>
+<a mat-button (click)="scrollTo('WhyUs');sidenav.close()">Why Us</a>
+<a mat-button (click)="scrollTo('contacts');sidenav.close()">Contacts</a>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -34,7 +35,7 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div id="aboutus" class="property2">
+<div #animatedSection id="aboutus" class="property2 animate-section fade-left">
   
     <h1>About Us</h1><br>
     <div class="about">
@@ -48,54 +49,27 @@
 </p>
    </div>
 </div>
-
-<div id="service" style="background-color: aliceblue" class="property2">
-  <h1>Services We Provide</h1><br>
+<div #animatedSection id="service" class="property2 animate-section zoom-in">
+  <h1>Services We Provide</h1>
 <div class="carousel-container">
-  <button mat-icon-button (click)="prevSlide()" class="nav-button">
-    <mat-icon>chevron_left</mat-icon>
-  </button>
+  <button class="nav-button" (click)="prevSlide()"><mat-icon>chevron_left</mat-icon></button>
 
-  <div class="cards-wrapper">
-    <div class="cards" [style.transform]="'translateX(' + currentPosition + 'px)'">
-    <mat-card class="card" appearance="outlined">
-    <img class="ig"  mat-card-md-image src="/Backend.png"  alt="Backend development">
-    <mat-card-header>
-      <mat-card-title>Backend Development</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      {{backend}}
-    </mat-card-content>
-    </mat-card>
+  <div class="carousel-track">
+    <div class="card" *ngFor="let card of visibleCards">
+      <mat-card class="example-card" appearance="outlined">
+        <img class="image" mat-card-image [src]="card.image" [alt]="card.title + ' Image'" />
+        <mat-card-content>
+          <h4>{{ card.title }}</h4>
+          <p>{{ card.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 
-  <mat-card class="card" appearance="outlined">
-    <img class="ig"  mat-card-md-image src="/frontend.jpeg"  alt="Frontend development">
-    <mat-card-header>
-      <mat-card-title>Frontend Development</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      {{frontend}}
-    </mat-card-content>
-  </mat-card>
-
-<mat-card class="card" appearance="outlined">
-  <img class="ig"  mat-card-md-image src="/Full stack.png"  alt="Full Stack development">
-  <mat-card-header>
-    <mat-card-title>FullStack Development</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    {{backend}}
-  </mat-card-content>
-</mat-card>
+  <button class="nav-button" (click)="nextSlide()"><mat-icon>chevron_right</mat-icon></button>
+</div> 
 </div>
-</div>
-  <button mat-icon-button (click)="nextSlide()" class="nav-button">
-    <mat-icon>chevron_right</mat-icon>
-  </button>
-</div>
-</div>
-
-<div id="team" class="property2">
+<div #animatedSection id="team" class="property2 animate-section fade-right">
   <h1>Meet Our Team</h1><br>
   <div class="team-section">
   <div class="team-grid">
@@ -121,7 +95,7 @@
   <img class="ig1" src="/PanUnited.png">
 </div>
 
-<div id="careers" style="background-color: aliceblue" class="property2">
+<div #animatedSection id="careers" style="background-color: aliceblue" class="property2 animate-section slide-up">
   <h1>Careers</h1><br>
   <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">we don’t just build products—we build the future of technology.Our team consists of innovators, problem-solvers, and tech enthusiasts  who are passionate about creating solutions that make a difference.
     Problem solvers who thrive in a collaborative environment,Creators who want to build scalable products that matter</p>
@@ -131,7 +105,7 @@
     </button>
 </div>
 
-<div id="WhyUs" class="property2">
+<div #animatedSection id="WhyUs" class="property2 animate-section fade-left">
   <h1>WhyUs</h1><br>
   <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">✔ Work on Impactful Products - Your work will power real solutions used by thousands worldwide.<br>
 ✔ Growth & Learning  -  We invest in your career with training, certifications, and mentorship.<br>
@@ -139,7 +113,7 @@
 ✔ Competitive Perks - Great benefits, flexible work, and performance rewards.<br></p>
 </div>
 
-<div id="contacts" style="background-color: aliceblue" class="property2">
+<div #animatedSection id="contacts" style="background-color: aliceblue" class="property2 animate-section zoom-in">
   <h1>Get in Touch</h1><br>
   <div style="background-color: aliceblue" class="property3">
   <div  class="get-contact">
