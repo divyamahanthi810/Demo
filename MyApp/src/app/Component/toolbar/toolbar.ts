@@ -10,33 +10,22 @@ import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import {MatSidenavModule} from '@angular/material/sidenav';@Component({
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+@Component({
   selector: 'app-toolbar',
   imports: [ RouterOutlet ,MatSidenavModule,MatSnackBarModule,ReactiveFormsModule,CommonModule,MatIconModule,MatGridListModule,MatCardModule,MatToolbarModule,RouterLink,RouterLinkActive,MatButtonModule],
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.css'
 })
 export class Toolbar {
-  teamMembers = [
-    {
-      name: 'DVVS Raju',
-      role: 'Managing Director',
-      bio: 'Managing Director of AASLIN.',
-      image: 'employee1.png',
-      linkedin:'https://linked.com',
-      github: 'https://github.com',
-    },
-    {
-      name: 'Murali Krishna Paidi',
-      role: 'IT Manager',
-      bio: 'Leads developer, QA and support team.',
-      image: 'employee1.png',
-      linkedin: 'https://linked.com',
-      github: 'https://github.com',
-    },
-  ];
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
-  backend=`A backend developer builds and maintains the server-side of websites and applications,
+  toggleMenu() {
+    this.sidenav.toggle();
+  }
+   backend=`A backend developer builds and maintains the server-side of websites and applications,
    focusing on the parts users don't see.`;
 
   frontend=`A front-end developer builds the parts of websites and applications that users see and interact with directly,
@@ -56,6 +45,25 @@ export class Toolbar {
       this.currentPosition += this.cardWidth;
     }
 }
+
+  teamMembers = [
+    {
+      name: 'DVVS Raju',
+      role: 'Managing Director',
+      bio: 'Managing Director of AASLIN.',
+      image: 'employee1.png',
+      linkedin:'https://linked.com',
+      github: 'https://github.com',
+    },
+    {
+      name: 'Murali Krishna Paidi',
+      role: 'IT Manager',
+      bio: 'Leads developer, QA and support team.',
+      image: 'employee1.png',
+      linkedin: 'https://linked.com',
+      github: 'https://github.com',
+    },
+  ];
 
   nestedform:FormGroup;
   constructor(){
@@ -78,6 +86,4 @@ private _snackBar = inject(MatSnackBar);
       console.log("invalid");
     }
   }
-
-  
 }

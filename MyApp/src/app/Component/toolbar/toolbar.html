@@ -1,25 +1,6 @@
-<!-- 
-<mat-toolbar style="background-color: aliceblue">
-  <img  height="60px" width="70px" src="aaslin_logo.png">
-  <span style="color:#b82228;font-family:regular;">AASLIN Technologies <br>Private Limited</span>
-
-  <div class="property1">
-    <a mat-button href="#card" target="text-decoration:none">Home</a>
-    <a mat-button href="#aboutus" target="text-decoration:none">About Us</a>
-    <a mat-button href="#service" target="text-decoration:none">Services</a>
-    <a mat-button href="#team" target="text-decoration:none">Team</a>
-    <a mat-button href="#careers" target="text-decoration:none">Careers</a>
-    <a mat-button href="#WhyUs" target="text-decoration:none">Why Us</a>
-    <a mat-button href="#contacts" target="text-decoration:none">Contacts</a>
-    <a mat-raised-button routerLink="/Register" routerLinkActive="active-link">Register</a>
-    
-  </div>
-</mat-toolbar> -->
 <mat-toolbar style="background-color: aliceblue" class="toolbar">
   <img height="60px" width="70px" src="aaslin_logo.png" alt="Logo">
   <span class="company-name">AASLIN Technologies <br>Private Limited</span>
-
-  <!-- Desktop Navigation -->
   <div class="property1 desktop-nav">
     <a mat-button href="#card">Home</a>
     <a mat-button href="#aboutus">About Us</a>
@@ -29,16 +10,13 @@
     <a mat-button href="#WhyUs">Why Us</a>
     <a mat-button href="#contacts">Contacts</a>
   </div>
-
-  <!-- Mobile Menu Button -->
   <button mat-icon-button class="mobile-menu-btn" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
-
-<!-- Mobile Side Navigation -->
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" class="mobile-nav">
+<div class="entire">
+<mat-sidenav-container class="mobile-container">
+  <mat-sidenav #sidenav mode="over" class="topnav">
     <button mat-icon-button class="close-btn" (click)="sidenav.close()">
       <mat-icon>close</mat-icon>
     </button>
@@ -56,59 +34,8 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<!-- 
-<mat-sidenav-container class="sidenav-container">
-  
- //Sidenav for Mobile 
-  <mat-sidenav #sidenav mode="over" class="mobile-nav">
-    <button mat-icon-button class="close-btn" (click)="sidenav.close()">
-      <mat-icon>close</mat-icon>
-    </button>
-    <a mat-button href="#card" (click)="sidenav.close()">Home</a>
-    <a mat-button href="#aboutus" (click)="sidenav.close()">About Us</a>
-    <a mat-button href="#service" (click)="sidenav.close()">Services</a>
-    <a mat-button href="#team" (click)="sidenav.close()">Team</a>
-    <a mat-button href="#careers" (click)="sidenav.close()">Careers</a>
-    <a mat-button href="#WhyUs" (click)="sidenav.close()">Why Us</a>
-    <a mat-button href="#contacts" (click)="sidenav.close()">Contacts</a>
-  </mat-sidenav>
-
-  <!-- Main Content 
-  <mat-sidenav-content>
-    <mat-toolbar style="background-color: aliceblue" class="toolbar">
-      <img height="60px" width="70px" src="aaslin_logo.png" alt="Logo">
-      <span class="company-name">
-        AASLIN Technologies <br>Private Limited
-      </span>
-
-      <!-- Desktop Menu 
-      <div class="property1 desktop-nav">
-        <a mat-button href="#card">Home</a>
-        <a mat-button href="#aboutus">About Us</a>
-        <a mat-button href="#service">Services</a>
-        <a mat-button href="#team">Team</a>
-        <a mat-button href="#careers">Careers</a>
-        <a mat-button href="#WhyUs">Why Us</a>
-        <a mat-button href="#contacts">Contacts</a>
-      </div>
-
-      <!-- Mobile Menu Butto
-      <button mat-icon-button class="mobile-menu-btn" (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar>
-
-    <div style="margin-top:80px;">
-      <!-- Your page content here
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
- -->
-
-
-
 <div id="aboutus" class="property2">
+  
     <h1>About Us</h1><br>
     <div class="about">
     <p>At AASLIN, we are a product-driven technology company passionate about building world-class solutions that redefine user experiences and business processes. Our products empower businesses and individuals to achieve more with innovation, simplicity, and performance.</p>
@@ -118,8 +45,7 @@
 
 <h2>Our Culture</h2>
 <p>We believe in innovation, collaboration, and continuous learning. At our company, you’ll work with cutting-edge technologies and a team of passionate engineers, designers, and visionaries who thrive on creativity and excellence.`;
-  backend=`A backend developer builds and maintains the server-side of websites and applications,
-   focusing on the parts users don't see.</p>
+</p>
    </div>
 </div>
 
@@ -197,17 +123,15 @@
 
 <div id="careers" style="background-color: aliceblue" class="property2">
   <h1>Careers</h1><br>
-  <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">we don’t just build products—we build the future of technology.
-    <br> Our team consists of innovators, problem-solvers, and tech enthusiasts <br> who are passionate about creating solutions that make a difference.
-<br>Problem solvers who thrive in a collaborative environment
-<br>Creators who want to build scalable products that matter</p>
+  <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">we don’t just build products—we build the future of technology.Our team consists of innovators, problem-solvers, and tech enthusiasts  who are passionate about creating solutions that make a difference.
+    Problem solvers who thrive in a collaborative environment,Creators who want to build scalable products that matter</p>
   <pre></pre>
     <button mat-raised-button>
       Explore Now <mat-icon>arrow_forward</mat-icon>
     </button>
 </div>
 
-<div id="Why Us" class="property2">
+<div id="WhyUs" class="property2">
   <h1>WhyUs</h1><br>
   <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">✔ Work on Impactful Products - Your work will power real solutions used by thousands worldwide.<br>
 ✔ Growth & Learning  -  We invest in your career with training, certifications, and mentorship.<br>
@@ -222,26 +146,26 @@
     <h2 style="color:#b82228">Contact Form</h2>
   <form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
     <div id="contacts" class="left">
-    <label style="text-align:left" for="firstName">Name</label><br>
+    <label for="firstName">Name</label><br>
     <input id="firstName" type="text" formControlName="firstName">
     <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('firstName')?.touched" class="error">
       Name is required.
     </div><br>
 
-    <label style="text-align:left" for="email">Email</label><br>
+    <label for="email">Email</label><br>
     <input id="email" type="email" formControlName="email">
     <div *ngIf="nestedform.get('email')?.invalid && nestedform.get('email')?.touched" class="error">
       <span *ngIf="nestedform.get('email')?.errors?.['required']">Email is required.</span>
       <span *ngIf="nestedform.get('email')?.errors?.['email']">Invalid email format.</span>
     </div><br>
 
-    <label style="text-align:left" for="subject">Subject</label><br>
+    <label for="subject">Subject</label><br>
     <input id="subject" type="text" formControlName="subject"><br>
     <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('subject')?.touched" class="error">
       Subject is required.
     </div>
 
-    <label style="text-align:left" for="message">Message</label><br>
+    <label for="message">Message</label><br>
     <textarea id="message" formControlName="message" rows="4" cols="35"></textarea>
     <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('message')?.touched" class="error">
       Message is required.
@@ -278,6 +202,7 @@
 <footer class="footCopyRight">
   © 2025 Copyright by AASLIN Developers. All rights reserved.
 </footer>
+</div>
 </div>
 
 
