@@ -7,14 +7,25 @@ import { MatIcon } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-component3',
-  imports: [ FormsModule,CommonModule ,MatSidenavModule,MatNavList,MatToolbarModule,MatIcon],
+  imports: [RouterOutlet, FormsModule,CommonModule ,MatSidenavModule,MatNavList,MatToolbarModule,MatIcon],
   templateUrl: './component3.html',
   styleUrl: './component3.css'
 })
 export class Component3 {
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50; // Change after 50px
+  }
+
+  scrollTo(section: string) {
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  }
   activeSection = 'home';
   isMobile = false;
 
@@ -35,19 +46,19 @@ export class Component3 {
     this.activeSection = section;
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const sections = ['home', 'about', 'cards', 'contact'];
-    for (const sec of sections) {
-      const element = document.getElementById(sec);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          this.activeSection = sec;
-          break;
-        }
-      }
+  // @HostListener('window:scroll', [])
+  // onWindowScroll() {
+  //   const sections = ['home', 'about', 'cards', 'contact'];
+  //   for (const sec of sections) {
+  //     const element = document.getElementById(sec);
+  //     if (element) {
+  //       const rect = element.getBoundingClientRect();
+  //       if (rect.top <= 100 && rect.bottom >= 100) {
+  //         this.activeSection = sec;
+  //         break;
+  //       }
+  //     }
 
 }
-  }
-}
+//   }
+// }
