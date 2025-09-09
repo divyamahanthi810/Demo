@@ -35,21 +35,29 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div #animatedSection id="aboutus" class="property2 animate-section fade-left">
-  
-    <h1>About Us</h1><br>
+<div  #animatedSection id="aboutus" class="property2 animate-section fade-left">
     <div class="about">
-    <p>At AASLIN, we are a product-driven technology company passionate about building world-class solutions that redefine user experiences and business processes. Our products empower businesses and individuals to achieve more with innovation, simplicity, and performance.</p>
+  <h1>About Us</h1>
+  <div class="about-content">
+    <div class="about-text">
+      <img src="/about us.jpg" alt="About Us">
+      <h2>What We Do</h2>
+      <p>
+        At AASLIN, we are a product-driven technology company passionate about building world-class solutions that redefine user experiences and business processes.
+        Our products empower businesses and individuals to achieve more with innovation, simplicity, and performance. We specialize in end-to-end software product development—from stunning front-end interfaces to robust back-end architectures and scalable full-stack solutions. Our focus is on creating high-quality, secure, and future-ready products that solve real-world challenges and deliver measurable value.
+      </p>
 
-<h2>What We Do</h2>
-<p>We specialize in end-to-end software product development—from stunning front-end interfaces to robust back-end architectures and scalable full-stack solutions. Our focus is on creating high-quality, secure, and future-ready products that solve real-world challenges and deliver measurable value.</p>
-
-<h2>Our Culture</h2>
-<p>We believe in innovation, collaboration, and continuous learning. At our company, you’ll work with cutting-edge technologies and a team of passionate engineers, designers, and visionaries who thrive on creativity and excellence.`;
-</p>
-   </div>
+      <h2>Our Culture</h2>
+      <p>
+        We believe in innovation, collaboration, and continuous learning. At our company, you’ll work with cutting-edge technologies and a team of passionate engineers,
+        designers, and visionaries who thrive on creativity and excellence.
+      </p>
+    </div>
+  </div>
 </div>
-<div #animatedSection id="service" class="property2 animate-section zoom-in">
+</div>
+
+<div #animatedSection id="service" style="background-color: aliceblue" class="property2 animate-section zoom-in">
   <h1>Services We Provide</h1>
 <div class="carousel-container">
   <button class="nav-button" (click)="prevSlide()"><mat-icon>chevron_left</mat-icon></button>
@@ -69,7 +77,7 @@
   <button class="nav-button" (click)="nextSlide()"><mat-icon>chevron_right</mat-icon></button>
 </div> 
 </div>
-<div #animatedSection id="team" class="property2 animate-section fade-right">
+<div  #animatedSection id="team" class="property2 animate-section fade-right">
   <h1>Meet Our Team</h1><br>
   <div class="team-section">
   <div class="team-grid">
@@ -95,22 +103,42 @@
   <img class="ig1" src="/PanUnited.png">
 </div>
 
-<div #animatedSection id="careers" style="background-color: aliceblue" class="property2 animate-section slide-up">
-  <h1>Careers</h1><br>
-  <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">we don’t just build products—we build the future of technology.Our team consists of innovators, problem-solvers, and tech enthusiasts  who are passionate about creating solutions that make a difference.
-    Problem solvers who thrive in a collaborative environment,Creators who want to build scalable products that matter</p>
-  <pre></pre>
-    <button mat-raised-button>
+<div  #animatedSection id="careers" style="background-color: aliceblue" class="property2 animate-section zoom-in">
+  <div class="careerpage">
+    <h1>Careers</h1>
+    <div class="career-content">
+      <img src="careers.jpg" alt="careers">
+      <p>
+      <span style="font-size:46px;color:rgb(11, 23, 41);font-weight: bold;">Explore Things</span><br><br>
+      <span style="font-size:35px;color:rgb(219, 173, 44)">Choose Your Path</span><br><br>
+      We don’t just build products—we build the future of technology. Our team consists of innovators, problem-solvers, and tech enthusiasts who are passionate about creating solutions that make a difference.
+      Problem solvers who thrive in a collaborative environment, creators who want to build scalable products that matter.
+      </p>
+    </div>
+    <button mat-raised-button class="career-btn">
       Explore Now <mat-icon>arrow_forward</mat-icon>
     </button>
+  </div>
 </div>
 
 <div #animatedSection id="WhyUs" class="property2 animate-section fade-left">
-  <h1>WhyUs</h1><br>
-  <p style="font-family:Arial, Helvetica, sans-serif;font-size:medium;">✔ Work on Impactful Products - Your work will power real solutions used by thousands worldwide.<br>
-✔ Growth & Learning  -  We invest in your career with training, certifications, and mentorship.<br>
-✔ Collaborative Environment - Open culture, innovation-driven, and inclusive.<br>
-✔ Competitive Perks - Great benefits, flexible work, and performance rewards.<br></p>
+  <h1>Why Us</h1><br>
+  <div class="whyus-content">
+  <div class="whyus-text">
+    <h3>Collaborative Culture</h3>
+    <p>Work with a passionate team of innovators and problem solvers.</p>
+
+    <h3>Career Growth</h3>
+    <p>We invest in your professional development with training and mentorship.</p>
+
+    <h3>Impactful Projects</h3>
+    <p>Build scalable products that make a real difference in the world.</p>
+
+    <h3>Work-life Balance</h3>
+    <p>Flexible work culture for better productivity and well-being.</p>
+  </div>
+  <img src="why us.jpg" alt="Why Us">
+</div>
 </div>
 
 <div #animatedSection id="contacts" style="background-color: aliceblue" class="property2 animate-section zoom-in">

@@ -9,9 +9,6 @@ body {
   text-align: center;
   overflow: hidden;
 }
-html {
-  scroll-behavior: smooth;
-}
 p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
@@ -130,13 +127,13 @@ mat-toolbar span {
     display: block; 
 }
 }
-/* About Section */
 
 .property2 {
   background-color: #ffffff;
   text-align: center;
   padding: 40px 10px;
   margin: 0 auto;
+  height:auto;
 }
 
 .property2 p {
@@ -337,7 +334,6 @@ mat-card-actions a {
   }
 }
 
-/* Contact Form */
 .property3 {
   display: flex;
   justify-content: center;
@@ -455,14 +451,12 @@ form button:disabled {
   border-style: none;
 }
 
-/* Common hidden state */
 .animate-section {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease-out;
 }
 
-/* When visible */
 .animate-section.show {
   opacity: 1;
   transform: translateY(0);
@@ -491,4 +485,105 @@ form button:disabled {
   transform: translateX(0) scale(1) translateY(0);
 }
 
+.careerpage {
+  max-width: auto;
+  background-color:aliceblue ;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.career-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  text-align: center;
+}
+
+.career-content img {
+  max-width: 350px;
+  height: 300px;
+  margin-left:30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.career-content p {
+  flex: 1;
+  color: #333;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+  .whyus-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.whyus-content img {
+  width: 350px;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.whyus-text {
+  flex: 1;
+  justify-content:left;
+  max-width: 600px;
+  color: #333;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.whyus-text h3 {
+  font-size: 1.5rem;
+  color: rgb(41, 91, 167);
+  margin-bottom: 8px;
+}
+
+.whyus-text p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .whyus-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whyus-content img {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .whyus-text {
+    text-align: center;
+  }
+  .career-content img {
+  max-width: 80%;
+}
+.career-content {
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  text-align: center;
+}
+}
+@media(max-width:768px){
+.about-content img{
+  margin-top:20px;
+  width:80%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+}
 

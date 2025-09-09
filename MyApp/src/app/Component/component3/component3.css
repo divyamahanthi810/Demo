@@ -1,14 +1,14 @@
-.section {
+/* .section {
   position: relative;
-  padding: 120px 20px; /* Add padding so text doesn't overlap waves */
-  overflow: hidden; /* Hide overflow if waves go outside */
+  padding: 120px 20px; 
+  overflow: hidden; 
   text-align: center;
-  background: #fff; /* Optional section background */
+  background: #fff;
 }
 
 .content {
   position: relative;
-  z-index: 2; /* Keep content above waves */
+  z-index: 2; 
   color: #333;
   max-width: 900px;
   margin: 0 auto;
@@ -44,9 +44,49 @@
     position: relative;
     display: block;
     width: calc(166% + 1.3px);
-    height: 600px;
+    height: 900px;
 }
 
 .custom-shape-divider-top-1757352988 .shape-fill {
     fill: #5966AE;
+} */
+.content{
+  color:#fff;
+}
+ body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+.wave-container {
+  margin-top:20px;
+  padding:50px 0px;
+  position: relative;
+  background: rgb(78, 61, 230);
+  color: #ffffff;
+  text-align: center;
+}
+h1 {
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
+p {
+  font-size: 1rem;
+  margin-left:200px;
+  text-align:justify;
+  justify-items: auto;
+  width:55%;
+}
+img{
+  float:inline-end;
+  width:20%;
+  height:100%;
+  margin-right:70px;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.animate-section{
+ position: absolute;
+ bottom:0;
+ left: 2px;
 }
