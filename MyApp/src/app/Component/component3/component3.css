@@ -1,9 +1,8 @@
 /* .section {
   position: relative;
   padding: 120px 20px; 
-  overflow: hidden; 
   text-align: center;
-  background: #fff;
+  background: #fff; 
 }
 
 .content {
@@ -44,49 +43,91 @@
     position: relative;
     display: block;
     width: calc(166% + 1.3px);
-    height: 900px;
+    height: 600px;
 }
 
 .custom-shape-divider-top-1757352988 .shape-fill {
     fill: #5966AE;
 } */
-.content{
-  color:#fff;
-}
- body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-}
-.wave-container {
-  margin-top:20px;
-  padding:50px 0px;
+ /* Wave section */
+/* .wave-section {
   position: relative;
-  background: rgb(78, 61, 230);
-  color: #ffffff;
-  text-align: center;
-}
-h1 {
-  font-size: 1.5rem;
-  padding-top: 20px;
-}
-p {
-  font-size: 1rem;
-  margin-left:200px;
-  text-align:justify;
-  justify-items: auto;
-  width:55%;
-}
-img{
-  float:inline-end;
-  width:20%;
-  height:100%;
-  margin-right:70px;
-  display:flex;
-  flex-wrap:wrap;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
 }
 
-.animate-section{
- position: absolute;
- bottom:0;
- left: 2px;
+.curved-section-top-1 {
+  position: absolute;
+  background-color: #a80d2a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+.content {
+  position: absolute; 
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 80%;
+  z-index:2;
+} */
+/* Toolbar */
+.wave-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.curved-section-top-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #a80d2a;
+  width: 100%;
+  z-index: -1;
+}
+
+.content {
+  position: absolute; /* ✅ Position inside wave */
+  top: 40%; /* Adjust vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 80%;
+  z-index:1000
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a80d2a;
+  transition: background-color 0.4s ease;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Scroll effect */
+.toolbar.scrolled {
+  background-color: aliceblue;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Text color switching */
+.text-light {
+  color: white !important;
+}
+
+.text-dark {
+  color: #333 !important;
 }

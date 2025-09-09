@@ -12,7 +12,7 @@ import { FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/
 import { RouterOutlet } from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ViewChild } from '@angular/core';
-import { AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { HostListener,AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 @Component({
   selector: 'app-toolbar',
@@ -21,6 +21,13 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrl: './toolbar.css'
 })
 export class Toolbar {
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50; // Change after 50px
+  }
+
   scrollTo(sectionId: string) {
   const element = document.getElementById(sectionId);
   if (element) {
