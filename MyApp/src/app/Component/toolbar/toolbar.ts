@@ -8,12 +8,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
-import { FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ViewChild } from '@angular/core';
 import { HostListener,AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import emailjs,{ type EmailJSResponseStatus } from 'emailjs-com';
+
+
 @Component({
   selector: 'app-toolbar',
   imports: [RouterOutlet ,MatSidenavModule,MatSnackBarModule,ReactiveFormsModule,CommonModule,MatIconModule,MatGridListModule,MatCardModule,MatToolbarModule,RouterLink,RouterLinkActive,MatButtonModule],
@@ -62,12 +65,12 @@ export class Toolbar {
     },
     {
       title: 'Backend Developer',      
-      image: '/Backend.png',  
-      description: '`A backend developer builds and maintains the server-side of websites and applications,focusing on the parts users dont see A backend developer builds and maintains the server-side of websites and applications,focusing on the parts users dont see.`'
+      image: '/back.png',  
+      description: '`A backend developer builds and maintains the server-side of websites and applications,focusing on the parts users dont see'
     },
     {
       title: 'service4',
-      image: '/Backend.png',  
+      image: '/back.png',  
       description: '`A backend developer builds and maintains the server-side of websites and applications,focusing on the parts users dont see.`'
     }                                                                                                                                           
 
@@ -79,10 +82,6 @@ export class Toolbar {
   }
    currentIndex = 0;
   visibleCards:any[] = [];
-
-  ngOnInit() {
-    this.updateVisibleCards();
-  }
 
  updateVisibleCards() {
   this.visibleCards = this.cards.slice(this.currentIndex, this.currentIndex + 3);
@@ -122,25 +121,43 @@ export class Toolbar {
     },
   ];
 
-  nestedform:FormGroup;
-  constructor(){
-  this.nestedform = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      subject: new FormControl('',Validators.required),
-      message: new FormControl('',Validators.required),
-    });
-}
 private _snackBar = inject(MatSnackBar);
+  nestedform!: FormGroup;
+  constructor(private fb: FormBuilder) {}
+  ngOnInit(): void {
+    this.updateVisibleCards();
+    this.nestedform = this.fb.group({
+      firstName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      subject: ['', Validators.required],
+      message: ['', Validators.required]
+    });
+  }
   onSubmit(): void {
-    
-    if(this.nestedform.valid){
+    if (this.nestedform.valid) {
+      const formData = this.nestedform.value;
+
+      emailjs.send(
+        'service_q1y3nqd',    
+        'template_d2laofw',  
+        {
+          from_name: formData.firstName,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        },
+        '3EY8SajBWMvGEffft'    
+      ).then((result: EmailJSResponseStatus) =>
+    {
+      if(this.nestedform.valid){
       
-    console.log(this.nestedform.value);
-    this._snackBar.open('Message sent!!', 'Close')
+      console.log(this.nestedform.value);
+      this._snackBar.open('Message sent!!', 'Close')
     }
     else{
       console.log("invalid");
     }
+  });
+}
   }
 }

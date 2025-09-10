@@ -1,133 +1,29 @@
-<!-- Wave Section (Background for Top) -->
-<div class="wave-section">
-  <svg
-    class="curved-section-top-1"
-    height="600px"
-    width="100%"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m-12.66406,442.40068c352.72654,-76.36348 565.45337,5.45453 696.36219,19.99996c130.90882,14.54542 270.90852,-23.63632 367.27196,-47.27263c96.36344,-23.63631 379.99921,-154.54513 527.27163,-209.09047c147.27242,-54.54535 381.813,-92.55755 406.36076,-99.00598c12.27388,-3.22421 917.96684,-113.93032 715.00991,10.61478c-202.95693,124.5451 -210.46055,521.28714 -198.64021,540.29354c11.82034,19.0064 -2500.90899,-15.53962 -2500.0019,-16.36399c-0.90709,0.82437 -9.99798,-180.99343 -9.09089,-181.8178"
-      fill="#a80d2a"
-    />
-    <path
-      d="m-116.90461,507.88064c314.5448,-112.72704 523.63527,-21.81814 878.17999,12.72724c354.54471,34.54538 632.72595,-225.45407 978.17978,-294.54484c172.72691,-34.54538 291.36195,-62.7275 368.52007,-78.40952c77.15812,-15.68202 352.84215,-22.50036 359.66142,-7.04537c13.63854,30.90997 97.72734,614.54347 50.90961,639.99858c-46.81772,25.4551 -855.68236,4.54593 -1433.63569,1.81866c-577.95334,-2.72727 -1155.90718,-5.45466 -1155.45364,-5.45491"
-      fill="#1d1636"
-    />
-    <path
-      d="m-115.93584,623.27542c234.54496,-132.72699 429.09001,-112.72703 678.1804,-83.63619c249.09039,29.09085 389.09011,30.90903 656.36228,-107.2725c267.27217,-138.18153 816.36193,-207.2723 1121.81584,-170.90873c305.45391,36.36356 -292.72666,-19.99996 -293.63778,-18.18228c71.36548,8.18218 627.05432,68.63506 626.48637,265.22584c-0.56794,196.59079 -20.11364,456.59134 -31.02284,531.13767c-10.90919,74.54633 -1561.82313,-36.3646 -1565.45948,-34.54642c-3.63636,1.81818 -1249.08831,-1.81818 -1248.18122,-1.81869c-0.90709,0.00051 39.09282,-234.54445 39.99992,-234.54496c-0.9071,0.00051 -4.54345,-76.36297 -3.63636,-76.36348"
-      fill="#fff"
-    />
-  </svg>
-  
-<div class="content">
-  <h1>Hello, world!</h1>
-  <p>Check out my awesome waves!</p>
-  <h1 id="aboutus">About Us</h1>
-  <p>
-    At AASLIN, we are a product-driven technology company passionate about building world-class
-    solutions that redefine user experiences and business processes.
-  </p>
-  <h2>What We Do</h2>
-  <p>
-    We specialize in end-to-end software product development—from stunning front-end interfaces to
-    robust back-end architectures and scalable full-stack solutions.
-  </p>
-  <h2 style="color:#1d1636">Our Culture</h2>
-  <p>
-    We believe in innovation, collaboration, and continuous learning.
-  </p>
-</div>
-</div>
-<!-- Toolbar -->
-<mat-toolbar [ngClass]="{'scrolled': isScrolled}" class="toolbar">
-  <img height="60px" width="70px" src="aaslin_logo.png" alt="Logo">
-  <span class="company-name" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">
-    AASLIN Technologies <br>Private Limited
-  </span>
-  <div class="property1 desktop-nav">
-    <a mat-button (click)="scrollTo('card')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">Home</a>
-    <a mat-button (click)="scrollTo('aboutus')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">About Us</a>
-    <a mat-button (click)="scrollTo('service')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">Services</a>
-    <a mat-button (click)="scrollTo('team')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">Team</a>
-    <a mat-button (click)="scrollTo('careers')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">Careers</a>
-    <a mat-button (click)="scrollTo('WhyUs')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">Why Us</a>
-    <a mat-button (click)="scrollTo('contacts')" [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">Contacts</a>
+<form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
+    <div id="contacts" class="left">
+    <label for="firstName">Name</label><br>
+    <input id="firstName" type="text" formControlName="firstName">
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('firstName')?.touched" class="error">
+      Name is required.
+    </div><br>
+
+    <label for="email">Email</label><br>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="nestedform.get('email')?.invalid && nestedform.get('email')?.touched" class="error">
+      <span *ngIf="nestedform.get('email')?.errors?.['required']">Email is required.</span>
+      <span *ngIf="nestedform.get('email')?.errors?.['email']">Invalid email format.</span>
+    </div><br>
+
+    <label for="subject">Subject</label><br>
+    <input id="subject" type="text" formControlName="subject"><br>
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('subject')?.touched" class="error">
+      Subject is required.
+    </div>
+
+    <label for="message">Message</label><br>
+    <textarea id="message" formControlName="message" rows="4" cols="35"></textarea>
+    <div *ngIf="nestedform.get('firstName')?.invalid && nestedform.get('message')?.touched" class="error">
+      Message is required.
+    </div><br>
+  <button type="Submit">Send Message</button>
   </div>
-  <button mat-icon-button class="mobile-menu-btn" (click)="sidenav.toggle()">
-    <mat-icon [ngClass]="{'text-light': !isScrolled, 'text-dark': isScrolled}">menu</mat-icon>
-  </button>
-</mat-toolbar>
-
-<!-- Mobile Menu -->
-<mat-sidenav-container class="mobile-container">
-  <mat-sidenav #sidenav mode="over" class="topnav">
-    <button mat-icon-button class="close-btn" (click)="sidenav.close()">
-      <mat-icon>close</mat-icon>
-    </button>
-    <a mat-button (click)="scrollTo('card');sidenav.close()">Home</a>
-    <a mat-button (click)="scrollTo('aboutus');sidenav.close()">About Us</a>
-    <a mat-button (click)="scrollTo('service');sidenav.close()">Services</a>
-    <a mat-button (click)="scrollTo('team');sidenav.close()">Team</a>
-    <a mat-button (click)="scrollTo('careers');sidenav.close()">Careers</a>
-    <a mat-button (click)="scrollTo('WhyUs');sidenav.close()">Why Us</a>
-    <a mat-button (click)="scrollTo('contacts');sidenav.close()">Contacts</a>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-<!-- Content -->
-
-
-<!-- <div id="aboutus" class="section">
- <div class="custom-shape-divider-top-1757352988">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-    </svg>
-</div>
-
-
-  <div class="content">
-    <h1>Hello, world!</h1>
-    <p>Check out my awesome waves!</p>
-    <h1>About Us</h1>
-    <p>
-      At AASLIN, we are a product-driven technology company passionate about building world-class
-      solutions that redefine user experiences and business processes.
-    </p>
-
-    <h2>What We Do</h2>
-    <p>
-      We specialize in end-to-end software product development—from stunning front-end interfaces to
-      robust back-end architectures and scalable full-stack solutions.
-    </p>
-
-    <h2>Our Culture</h2>
-    <p>
-      We believe in innovation, collaboration, and continuous learning.
-    </p>
-  </div>
-
-  <svg class="wave wave-bottom" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,30 C360,120 720,0 1080,30 C1260,50 1440,20 1440,20 L1440,150 L0,150 Z" fill="#1e6eff"/>
-    <path d="M0,10 C360,100 720,-10 1080,10 C1260,30 1440,0 1440,0 L1440,150 L0,150 Z" fill="#c62828" opacity="0.95"/>
-  </svg>
-</div> -->
-
-<div class="wave-container">
-  <div class="animate-section">
-    <div class="zoom-in">
-  <h1 style="color:rgb(255, 255, 255)">Home Page</h1>
-    <img src="/why us.jpg">
-            <p>In a world marked by rapid technological advancements, dynamic economic shifts, and a constantly changing global landscape, navigating these transformations poses a considerable
-              challenge for our people, clients, partners, and communities. At AASLIN Technologies.We don’t just build products—we build the future of technology. Our team consists of innovators, problem-solvers, and tech enthusiasts who are passionate about creating solutions that make a difference.
-      Problem solvers who thrive in a collaborative environment, creators who want to build scalable products that matter.</p>
-</div>
-</div>
-  <svg class="ani" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.95" d="M0,96L60,90.7C120,85,240,75,360,101.3C480,128,600,192,720,186.7C840,181,960,107,1080,96C1200,85,1320,139,1380,165.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-
-</div>
-
-
+</form>
