@@ -89,7 +89,7 @@ dedicated to pushing the limits of what is achievable.Drawing on our expertise,e
 <div class="carousel-container">
   <button class="nav-button" (click)="prevSlide()"><mat-icon>chevron_left</mat-icon></button>
   <div class="carousel-track">
-    <div class="card" *ngFor="let card of visibleCards">
+    <div class="card" *ngFor="let card of cards">
       <mat-card class="example-card" appearance="outlined">
         <img class="image" mat-card-image [src]="card.image" [alt]="card.title + ' Image'" />
         <mat-card-content>

@@ -52,6 +52,11 @@ export class Toolbar {
 
     this.animatedSections.forEach(section => observer.observe(section.nativeElement));
   }
+   @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  toggleMenu() {
+    this.sidenav.toggle();
+  }
   cards = [
     {
       title: 'Frontend Developer',
@@ -75,33 +80,74 @@ export class Toolbar {
     }                                                                                                                                           
 
   ];
-  @ViewChild('sidenav') sidenav!: MatSidenav;
+// 
+//    currentIndex = 0;
+//   visibleCards:any[] = [];
 
-  toggleMenu() {
-    this.sidenav.toggle();
+//  updateVisibleCards() {
+//   this.visibleCards = this.cards.slice(this.currentIndex, this.currentIndex + 3);
+
+// }
+
+//   nextSlide() {
+//     if (this.currentIndex + 3 < this.cards.length) {
+//       this.currentIndex++;
+//       this.updateVisibleCards();
+//     }
+//   }
+
+//   prevSlide() {
+//     if (this.currentIndex > 0) {
+//       this.currentIndex--;
+//       this.updateVisibleCards();
+//     }
+//   }
+
+  //new
+  // cards= [
+  //   { title: 'Cake', description: 'Lorem ipsum dolor sit amet...', image: 'assets/cake.jpg' },
+  //   { title: 'Cupcake', description: 'Nostrum mentitum ea sit...', image: 'assets/cupcake.jpg' },
+  //   { title: 'Brownie', description: 'Ad est alia utroque...', image: 'assets/brownie.jpg' },
+  //   { title: 'Donut', description: 'Expetenda suavitate...', image: 'assets/donut.jpg' },
+  //   { title: 'Macaron', description: 'Aliquam tincidunt...', image: 'assets/macaron.jpg' }
+  // ];
+
+  currentIndex = 0;
+  cardsPerView = this.getCardsPerView();
+
+  @HostListener('window:resize')
+  onResize() {
+    this.cardsPerView = this.getCardsPerView();
+    this.updateCarousel();
   }
-   currentIndex = 0;
-  visibleCards:any[] = [];
 
- updateVisibleCards() {
-  this.visibleCards = this.cards.slice(this.currentIndex, this.currentIndex + 3);
+  getCardsPerView(): number {
+    if (window.innerWidth <= 480) return 1;   // mobile
+    if (window.innerWidth <= 1024) return 2;  // tablet
+    return 3;                                 // desktop
+  }
 
-}
+  updateCarousel() {
+    const track = document.querySelector<HTMLElement>('.carousel-track');
+    if (track) {
+      const cardWidth = track.querySelector<HTMLElement>('.card')?.offsetWidth || 0;
+      track.style.transform = `translateX(-${this.currentIndex * cardWidth}px)`;
+    }
+  }
 
   nextSlide() {
-    if (this.currentIndex + 3 < this.cards.length) {
+    if (this.currentIndex < this.cards.length - this.cardsPerView) {
       this.currentIndex++;
-      this.updateVisibleCards();
+      this.updateCarousel();
     }
   }
 
   prevSlide() {
     if (this.currentIndex > 0) {
       this.currentIndex--;
-      this.updateVisibleCards();
+      this.updateCarousel();
     }
   }
-
   teamMembers = [
     {
       name: 'DVVS Raju',
@@ -125,7 +171,7 @@ private _snackBar = inject(MatSnackBar);
   nestedform!: FormGroup;
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
-    this.updateVisibleCards();
+    // this.updateVisibleCards();
     this.nestedform = this.fb.group({
       firstName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
