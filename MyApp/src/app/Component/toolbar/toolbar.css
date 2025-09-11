@@ -168,7 +168,6 @@ mat-toolbar {
   height:90%;
   overflow: hidden;
   width: 100%;
-  max-width: 1300px;
 }
 .example-card{
   height: 450px;
@@ -243,13 +242,12 @@ mat-toolbar {
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-left:15%;
+  margin-left:28%;
   gap: 60px;
-  max-width: 1300px;
+  max-width: 900px;
 }
 .team-card {
   text-align: center;
-  padding: 20px;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -257,11 +255,17 @@ mat-toolbar {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+.imageuse{
+  background-color:#65a1fa;
+  padding-top:5%;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
 .profile-img {
-  width: 50%;
+  width: 45%;
   height: auto;
-  border-radius: 7%;
-  object-fit: cover;
+  border-radius: 50px;
+  object-fit: fit;
   margin: 0 auto 15px;
 }
 .profile-img .img{
