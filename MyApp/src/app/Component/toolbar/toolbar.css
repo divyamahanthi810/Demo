@@ -317,7 +317,7 @@ mat-toolbar {
   }
 
   .example-card {
-    max-width: 100%;  /* full width, no zoom */
+    max-width: 90%;  /* full width, no zoom */
   }
 
   .nav-button:first-of-type {
