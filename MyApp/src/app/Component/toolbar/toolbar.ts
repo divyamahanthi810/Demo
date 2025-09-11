@@ -8,11 +8,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule,Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule,Validators} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ViewChild } from '@angular/core';
-import { HostListener,AfterViewInit, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { HostListener, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import emailjs,{ type EmailJSResponseStatus } from 'emailjs-com';
 
@@ -28,7 +28,7 @@ export class Toolbar {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50; // Change after 50px
+    this.isScrolled = window.scrollY > 50;
   }
 
   scrollTo(sectionId: string) {
@@ -45,7 +45,7 @@ export class Toolbar {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         }else {
-          entry.target.classList.remove('show'); // Remove when out of view
+          entry.target.classList.remove('show');
         }
       });
     }, { threshold: 0.2 });

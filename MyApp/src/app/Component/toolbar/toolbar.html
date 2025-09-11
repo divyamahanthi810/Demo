@@ -16,10 +16,7 @@
 </mat-toolbar>
 <mat-sidenav-container class="mobile-container">
   <mat-sidenav #sidenav mode="over" class="sidenav">
-    <button mat-icon-button class="close-btn" (click)="sidenav.close()">
-      <mat-icon>close</mat-icon>
-    </button>
-    <a mat-button (click)="scrollTo('home');sidenav.close()">Home</a>
+<a mat-button (click)="scrollTo('home');sidenav.close()">Home</a>
 <a mat-button (click)="scrollTo('aboutus');sidenav.close()">About Us</a>
 <a mat-button (click)="scrollTo('service');sidenav.close()">Services</a>
 <a mat-button (click)="scrollTo('team');sidenav.close()">Team</a>
@@ -31,6 +28,7 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<div class="company-container">
 
 <div class="wave-section">
   <svg
@@ -58,12 +56,9 @@
   <div class="homepage">
   <p>
     In a world marked by rapid technological advancements,dynamic economic shifts,and a constantly changing global landscape,navigating these transformations poses a considerable challenge for our people,clients,partners,communities.At AASLIN Technologies,we are
-dedicated to pushing the limits of what is achievable.Drawing on our expertise,experience,
-and innovative ecosystem, we empower enterprises, individuals,and communities to forge a
-better future at an accelerated pace.weempower enterprises,individuals,and communities to forge a better future at an accelerated pace.
+dedicated to pushing the limits of what is achievable.Drawing on our expertise,experience,and innovative ecosystem, we empower enterprises, individuals,and communities to forge a better future at an accelerated pace.weempower enterprises,individuals,and communities to forge a better future at an accelerated pace.
 
   </p>
-  <!-- <img src="/home.jpg" alt="Home"> -->
   </div>
 </div>
 </div>
@@ -93,7 +88,6 @@ better future at an accelerated pace.weempower enterprises,individuals,and commu
   <h1>Services We Provide</h1>
 <div class="carousel-container">
   <button class="nav-button" (click)="prevSlide()"><mat-icon>chevron_left</mat-icon></button>
-
   <div class="carousel-track">
     <div class="card" *ngFor="let card of visibleCards">
       <mat-card class="example-card" appearance="outlined">
@@ -105,16 +99,18 @@ better future at an accelerated pace.weempower enterprises,individuals,and commu
       </mat-card>
     </div>
   </div>
-
   <button class="nav-button" (click)="nextSlide()"><mat-icon>chevron_right</mat-icon></button>
 </div> 
 </div>
+
 <div  #animatedSection id="team" class="property2 animate-section fade-right">
   <h1>Meet Our Team</h1><br>
   <div class="team-section">
   <div class="team-grid">
     <mat-card class="team-card" *ngFor="let member of teamMembers">
-      <img mat-card-image [src]="member.image" alt="{{member.name}}" class="profile-img">
+      <div class="imageuse">
+      <img [src]="member.image" alt="{{member.name}}" class="profile-img">
+      </div>
       <mat-card-content style="text-align:center">
         <h3>{{ member.name }}</h3>
         <p class="role">{{ member.role }}</p>
@@ -139,8 +135,8 @@ better future at an accelerated pace.weempower enterprises,individuals,and commu
       Problem solvers who thrive in a collaborative environment, creators who want to build scalable products that matter.
       </p>
     </div>
-    <button mat-raised-button class="career-btn">
-      Explore Now <mat-icon>arrow_forward</mat-icon>
+    <button routerlink mat-raised-button class="career-btn">
+      Explore Now<mat-icon>arrow_forward</mat-icon>
     </button>
   </div>
 </div>
@@ -224,13 +220,11 @@ Visakhapatnam-530017</p>
 <p>8.00 Am-5.30 Pm</p>
 <button class="icon"><mat-icon>email</mat-icon></button>
 </div>
-</div>
+</div><br>
 <footer class="footCopyRight">
   © 2025 Copyright by AASLIN Developers. All rights reserved.
 </footer>
-
-
-
+</div>
 </div>
 
 
