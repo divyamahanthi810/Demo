@@ -122,9 +122,9 @@ export class Toolbar {
   }
 
   getCardsPerView(): number {
-    if (window.innerWidth <= 480) return 1;   // mobile
-    if (window.innerWidth <= 1024) return 2;  // tablet
-    return 3;                                 // desktop
+    if (window.innerWidth <= 480) return 1;   
+    if (window.innerWidth <= 1024) return 2;  
+    return 3;                                 
   }
 
   updateCarousel() {
@@ -168,11 +168,11 @@ export class Toolbar {
   ];
 
 private _snackBar = inject(MatSnackBar);
-  nestedform!: FormGroup;
+  contactform!: FormGroup;
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
     // this.updateVisibleCards();
-    this.nestedform = this.fb.group({
+    this.contactform = this.fb.group({
       firstName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', Validators.required],
@@ -180,8 +180,8 @@ private _snackBar = inject(MatSnackBar);
     });
   }
   onSubmit(): void {
-    if (this.nestedform.valid) {
-      const formData = this.nestedform.value;
+    if (this.contactform.valid) {
+      const formData = this.contactform.value;
 
       emailjs.send(
         'service_q1y3nqd',    
@@ -195,10 +195,11 @@ private _snackBar = inject(MatSnackBar);
         '3EY8SajBWMvGEffft'    
       ).then((result: EmailJSResponseStatus) =>
     {
-      if(this.nestedform.valid){
+      if(this.contactform.valid){
       
-      console.log(this.nestedform.value);
-      this._snackBar.open('Message sent!!', 'Close')
+      console.log(this.contactform.value);
+      this._snackBar.open('Message sent!!', 'Close');
+      this.contactform.reset()
     }
     else{
       console.log("invalid");

@@ -110,12 +110,12 @@ mat-toolbar {
 .about h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #a80d2a;
+  color: #b82228;
 }
 .about-text h2 {
   font-size: 1.5rem;
   margin-left:5%;
-  color: #a80d2a;
+  color: #b82228;
 }
 .about-content {
   display: flex;
@@ -365,7 +365,7 @@ mat-toolbar {
 }
 .whyus-text h3 {
   font-size: 1.5rem;
-  color: rgb(41, 91, 167);
+  color: #003a70;
   margin-bottom: 8px;
 }
 .whyus-text p {
@@ -426,7 +426,7 @@ mat-toolbar {
 }
 label {
   text-align:left;
-  font-weight: bold;
+  font-weight: 500;
   padding:10px 10px 10px 0px;
   margin:10px;
   color:#003a70;
@@ -442,7 +442,7 @@ textarea {
   font-size: 14px;
 }
 .error {
-  color: red;
+  color: #b82228;
   font-size: 13px;
 }
 form button {
@@ -636,7 +636,8 @@ form button:disabled {
   }
 }
 .toolbar.scrolled {
-  background-color: #1d1636;
+  background-color: #003a70;
+  /* background-color: #1d1636; */
   color:#070606;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
