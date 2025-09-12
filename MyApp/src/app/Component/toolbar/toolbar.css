@@ -152,87 +152,7 @@ mat-toolbar {
     text-align: center;
   }
 }
-/* .carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-  flex-wrap: wrap; 
-}
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding:20px;
-  height:90%;
-  overflow: hidden;
-  width: 100%;
-  max-width:1300px;
-}
-.example-card{
-  height: 450px;
-  width:400px;
-}
-.card {
-  width: 100%;
-  max-width:400px;
-  height: 10%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-.nav-button {
-  background: none;
-  border-style: none;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  position:relative;
-}
-@media (max-width: 1024px) {
-  .carousel-container {
-    flex-direction: row;
-    align-items: center;
-    max-width:900px;
-  }
-  .carousel-track {
-    flex-direction: row;
-    gap: 15px;
-  }
-  card{
-    flex:0 0 100%;
-  }
-}
 
-@media (max-width: 450px) and (max-width: 756px){
-  .carousel-container {
-    flex-direction: column;
-    align-items: center;
-    max-width:440px;
-  }
-  .carousel-track {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .card {
-    flex: 1 1 90%;
-    max-width: 90%;
-  }
-  .nav-button {
-    font-size: 1.2em;
-    padding: 8px 12px;
-  }
-  .example-card{
-  height: auto;
-  width:260px;
-  padding:auto;
-} 
-/* } */
-/* Default Desktop */
-/* Base container */
-/* Container */
 .carousel-container {
   display: flex;
   align-items: center;
@@ -244,25 +164,22 @@ mat-toolbar {
   padding: 20px 0;
 }
 
-/* Track */
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
 
-/* Card wrapper */
 .card {
   flex: 0 0 auto;
   padding: 10px;
   box-sizing: border-box;
 }
 
-/* Card */
 .example-card {
   width: 100%;
   max-width: 400px;
-  height: auto;
+  height: 450px;
   margin: auto;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -272,11 +189,10 @@ mat-toolbar {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Nav buttons */
 .nav-button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(50%);
   background: white;
   border: none;
   border-radius: 50%;
@@ -286,13 +202,12 @@ mat-toolbar {
   z-index: 10;
 }
 .nav-button:first-of-type {
-  left: -20px;  /* outside left */
+  left: -0px; 
 }
 .nav-button:last-of-type {
-  right: -20px; /* outside right */
+  right: -0px;/
 }
 
-/* Desktop: 3 cards */
 @media (min-width: 1025px) {
   .card {
     flex: 0 0 33.33%;
@@ -300,7 +215,6 @@ mat-toolbar {
   }
 }
 
-/* Tablet: 2 cards */
 @media (max-width: 1024px) and (min-width: 481px) {
   .card {
     flex: 0 0 50%;
@@ -308,7 +222,6 @@ mat-toolbar {
   }
 }
 
-/* Mobile: 1 card */
 @media (max-width: 480px) {
   .card {
     flex: 0 0 100%;
@@ -317,11 +230,11 @@ mat-toolbar {
   }
 
   .example-card {
-    max-width: 90%;  /* full width, no zoom */
+    max-width: 90%;  
   }
 
   .nav-button:first-of-type {
-    left: 5px; /* move inside edge */
+    left: 5px;
   }
   .nav-button:last-of-type {
     right: 5px;
@@ -342,7 +255,7 @@ mat-toolbar {
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-left:28%;
+  margin:auto;
   gap: 60px;
   max-width: 900px;
 }
@@ -361,15 +274,13 @@ mat-toolbar {
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 }
-.profile-img {
-  width: 45%;
-  height: auto;
-  border-radius: 50px;
+.imageuse img{
+  background-color:#1d1636;
+  border-radius: 50%;
+  width: 50%;
   object-fit: fit;
   margin: 0 auto 15px;
-}
-.profile-img .img{
-  background-color:#1d1636;
+  height:auto;
 }
 .ig1 {
   width: 25vh;
@@ -660,6 +571,15 @@ form button:disabled {
   left: 0;
   height:700px;
   background-color: #b82228;
+  width: 100%;
+  z-index: -1;
+}
+.curved-section-top-2 {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  height:700px;
+  background-color:transparent;
   width: 100%;
   z-index: -1;
 }

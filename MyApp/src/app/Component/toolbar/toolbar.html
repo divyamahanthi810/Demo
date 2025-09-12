@@ -109,7 +109,7 @@ dedicated to pushing the limits of what is achievable.Drawing on our expertise,e
   <div class="team-grid">
     <mat-card class="team-card" *ngFor="let member of teamMembers">
       <div class="imageuse">
-      <img [src]="member.image" alt="{{member.name}}" class="profile-img">
+      <img [src]="member.image" alt="{{member.name}}">
       </div>
       <mat-card-content style="text-align:center">
         <h3>{{ member.name }}</h3>
@@ -161,11 +161,12 @@ dedicated to pushing the limits of what is achievable.Drawing on our expertise,e
 </div>
 </div>
 <div>
+<div>
 <div #animatedSection id="contacts" style="background-color: aliceblue" class="property2 animate-section zoom-in">
   <h1>Get in Touch</h1><br>
   <div style="background-color: aliceblue" class="property3">
   <div  class="get-contact">
-    <h2 style="color:#b82228">Contact Form</h2>
+    <h2 style="color:#d63d42">Contact Form</h2>
   <form [formGroup]="nestedform" (ngSubmit)="onSubmit()">
     <div id="contacts" class="left">
     <label for="firstName">Name</label><br>
@@ -224,6 +225,8 @@ Visakhapatnam-530017</p>
 <footer class="footCopyRight">
   © 2025 Copyright by AASLIN Developers. All rights reserved.
 </footer>
+</div>
+</div>
 </div>
 </div>
 
