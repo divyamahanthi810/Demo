@@ -80,38 +80,6 @@ export class Toolbar {
     }                                                                                                                                           
 
   ];
-// 
-//    currentIndex = 0;
-//   visibleCards:any[] = [];
-
-//  updateVisibleCards() {
-//   this.visibleCards = this.cards.slice(this.currentIndex, this.currentIndex + 3);
-
-// }
-
-//   nextSlide() {
-//     if (this.currentIndex + 3 < this.cards.length) {
-//       this.currentIndex++;
-//       this.updateVisibleCards();
-//     }
-//   }
-
-//   prevSlide() {
-//     if (this.currentIndex > 0) {
-//       this.currentIndex--;
-//       this.updateVisibleCards();
-//     }
-//   }
-
-  //new
-  // cards= [
-  //   { title: 'Cake', description: 'Lorem ipsum dolor sit amet...', image: 'assets/cake.jpg' },
-  //   { title: 'Cupcake', description: 'Nostrum mentitum ea sit...', image: 'assets/cupcake.jpg' },
-  //   { title: 'Brownie', description: 'Ad est alia utroque...', image: 'assets/brownie.jpg' },
-  //   { title: 'Donut', description: 'Expetenda suavitate...', image: 'assets/donut.jpg' },
-  //   { title: 'Macaron', description: 'Aliquam tincidunt...', image: 'assets/macaron.jpg' }
-  // ];
-
   currentIndex = 0;
   cardsPerView = this.getCardsPerView();
 
@@ -171,7 +139,6 @@ private _snackBar = inject(MatSnackBar);
   contactform!: FormGroup;
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
-    // this.updateVisibleCards();
     this.contactform = this.fb.group({
       firstName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
